@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando...</title>
+    <script>
+        (function() {
+            var path = window.location.pathname;
+            var search = window.location.search;
+            var hash = window.location.hash;
+
+            // Remove barras iniciais e finais
+            var cleanPath = path.replace(/^\/+|\/+$/g, '');
+
+            var slugPages = [
+                '01', '01.html',
+                '02', '02.html',
+                '03', '03.html',
+                '04', '04.html',
+                '05', '05.html',
+                '06', '06.html',
+                '07', '07.html',
+                '08', '08.html',
+                '2', '2.html',
+                'configurando-conta', 'configurando-conta.html',
+                'conta', 'conta.html',
+                'payment-1', 'payment-1.html',
+                'payment', 'payment/index.html',
+                'window.location.html'
+            ];
+
+            var isSlugFile = slugPages.indexOf(cleanPath) !== -1 || slugPages.indexOf(cleanPath + '.html') !== -1;
+
+            if (isSlugFile) {
+                var targetFile = cleanPath;
+                if (!targetFile.endsWith('.html') && targetFile !== 'payment') {
+                    targetFile += '.html';
+                }
+                if (targetFile === 'payment.html') {
+                    targetFile = 'payment/index.html';
+                }
+                window.location.replace('/345349787234/' + targetFile + search + hash);
+            } else {
+                window.location.replace('/' + search + hash);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div style="text-align: center; padding-top: 80px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #475569;">
+        <p style="font-size: 1.1rem; font-weight: 600;">Carregando a próxima etapa...</p>
+    </div>
+</body>
+</html>

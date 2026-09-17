@@ -160,11 +160,7 @@
       }
 
       function getNextUpsellUrl() {
-        if (window.location.pathname.endsWith('.html')) {
-          return 'upsells/01.html' + window.location.search;
-        } else {
-          return '../upsells/01' + window.location.search;
-        }
+        return 'upsells/01.html' + window.location.search;
       }
 
       function checkStatus() {

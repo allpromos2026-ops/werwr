@@ -580,7 +580,7 @@
               console.log('✅ ID da transação salvo:', txId);
               
               setTimeout(function() {
-                var dest = window.location.pathname.endsWith('.html') ? '../payment-1.html' : '../payment-1';
+                var dest = '../payment-1.html';
                 window.location.href = dest + window.location.search;
               }, 1500);
             } else {

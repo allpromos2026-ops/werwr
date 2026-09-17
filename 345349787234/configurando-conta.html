@@ -397,7 +397,7 @@
                 label.textContent = 'Pronto! Redirecionando...';
                 statusText.textContent = 'Tudo pronto!';
                 setTimeout(() => {
-                    window.location.href = (window.location.pathname.endsWith('.html') ? 'conta.html' : '../conta') + window.location.search;
+                    window.location.href = 'conta.html' + window.location.search;
                 }, 1200);
             }
         }

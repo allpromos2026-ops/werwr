@@ -1158,7 +1158,7 @@
             });
 
             const checkoutParams = new URLSearchParams(params);
-            window.location.href = (window.location.pathname.endsWith('.html') ? 'payment/index.html' : '../payment/index.html') + window.location.search;
+            window.location.href = 'payment/index.html' + window.location.search;
         }
 
         document.getElementById('modal').addEventListener('click', function (e) {

